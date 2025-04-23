@@ -1,0 +1,50 @@
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environnements virtuels
+.env/
+.venv/
+env/
+venv/
+
+# Fichiers de configuration d’environnement
+*.env
+.envrc
+
+# Dossiers temporaires et caches
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+.cache/
+.ipynb_checkpoints/
+
+# Données ou modèles
+data/
+models/
+checkpoints/
+*.h5
+*.ckpt
+*.pth
+*.pt
+
+# Sorties Jupyter
+*.nbconvert.ipynb
+
+# Fichiers Latex (si tu compiles un rapport)
+*.aux
+*.out
+*.toc
+*.log
+*.pdf
+
+# IDE
+.vscode/
+.idea/
+
+# fichiers système
+Thumbs.db
+desktop.ini

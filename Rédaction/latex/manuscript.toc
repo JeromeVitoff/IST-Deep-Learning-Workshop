@@ -1,0 +1,60 @@
+\babel@toc {french}{}\relax 
+\contentsline {starchapter}{Remerciements}{ii}{Doc-Start}%
+\contentsline {starchapter}{Résumé}{iii}{Doc-Start}%
+\contentsline {section}{Lexique}{iv}{section*.1}%
+\contentsline {starchapter}{Liste des figures}{vi}{chapter*.2}%
+\contentsline {starchapter}{Liste des tables}{vii}{chapter*.3}%
+\contentsline {starchapter}{Introduction}{1}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Présentation du projet de recherche Kaggle}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction au challenge IST Deep Learning Workshop}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Contexte du projet et son importance dans le domaine du traitement d'image}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Rôle du projet dans mon parcours académique}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Contribution du projet aux objectifs pédagogiques et professionnels}{5}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Présentation du contexte Data Science}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Présentation des données}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Structure et caractéristiques des données}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2} Nature des données}{8}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Analyse exploratoire des données}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Visualisation d'échantillons de caractères}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Distribution des classes}{9}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Prétraitement des données}{10}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Normalisation}{11}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Reshaping pour l'analyse et la modélisation}{11}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Division entraînement/validation}{11}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Défis spécifiques liés aux caractères ourdou}{12}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Complexité morphologique}{12}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Similarité entre certains caractères}{12}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Variabilité dans la représentation}{13}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4} Qualité et résolution des images}{13}{subsection.2.4.4}%
+\contentsline {chapter}{\numberline {3}Modélisation et Analyse des Résultats}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction aux approches utilisées}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Modèle 1 : Perceptron Multicouche (MLP)}{15}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Architecture}{15}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Entraînement}{15}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Résultats(54.6\%)}{15}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Analyse des limites}{16}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Modèle 2 : CNN simple}{16}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Architecture}{16}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Entraînement}{17}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Résultats(88\%)}{17}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Analyse des améliorations par rapport au MLP}{17}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Modèle 3 : CNN profond avec BatchNormalization}{18}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Architecture détaillée}{18}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Mécanismes de régularisation}{19}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Résultats (98.5\%)}{20}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Comparaison des performances}{20}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Analyse comparative des trois approches}{21}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Tableau comparatif des performances}{21}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Analyse des courbes d'apprentissage}{21}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Visualisation des matrices de confusion}{23}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Discussion sur les facteurs d'amélioration}{23}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}Soumission sur Kaggle et résultats finaux}{24}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Soumission sur Kaggle}{24}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Résultats finaux}{25}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}Perspectives}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Optimisations potentielles des modèles actuels}{26}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Exploration de modèles avancés}{26}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Applications pratiques potentielles}{27}{section.4.3}%
+\contentsline {starchapter}{Conclusion}{27}{Item.50}%
+\contentsline {starchapter}{Annexes}{29}{chapter*.16}%
+\contentsline {starchapter}{Bibliographie}{35}{figure.caption.30}%

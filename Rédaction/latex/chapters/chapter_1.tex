@@ -1,0 +1,81 @@
+% !TEX root = manuscript.tex
+
+\chapter{Présentation du projet de recherche Kaggle}
+%\minitoc
+%\newpage
+\section{Introduction au challenge IST Deep Learning Workshop}
+
+
+Le challenge "IST Deep Learning Workshop - Urdu Character Recognition Dataset for MLP" est une compétition hébergée sur la plateforme Kaggle et proposée par l'Institut des Sciences et de la Technologie (IST). Cette initiative vise à encourager le développement de solutions d'apprentissage automatique pour la reconnaissance de caractères en ourdou, une tâche fondamentale dans le domaine de la vision par ordinateur et du traitement d'images.
+
+La compétition propose aux participants de développer des modèles capables de classifier correctement des images de caractères ourdou présentées sous forme de matrices de pixels de dimension 28×28. Ces images, similaires au format du célèbre dataset MNIST pour les chiffres, représentent 40 classes distinctes de caractères de l'alphabet ourdou. L'objectif explicite est d'obtenir la meilleure précision de classification possible sur un jeu de test dont les étiquettes ne sont pas divulguées aux participants.
+
+Les données sont structurées en deux (02) ensembles principaux: un ensemble d'entraînement  (data\_train.csv) contenant 28 328 images étiquetées et un ensemble de test (data\_test\_mlp\_final.csv) comprenant 4 880 images non étiquetées. Chaque image est représentée par 784 valeurs numériques correspondant à l'intensité des pixels, accompagnées d'un identifiant et, pour l'ensemble d'entraînement, d'une étiquette de classe allant de 0 à 39.
+La métrique d'évaluation principale de cette compétition est l'exactitude (accuracy), qui mesure simplement la proportion de prédictions correctes sur l'ensemble des observations du jeu de test. Cette métrique, bien qu'élémentaire, est particulièrement adaptée pour ce problème de classification multiclasse où les classes sont relativement équilibrées.
+
+\section{Contexte du projet et son importance dans le domaine du traitement d'image} 
+\begin{flushleft}
+
+
+La reconnaissance de caractères ourdou s'inscrit dans le champ plus large des systèmes OCR (Optical Character Recognition) pour les langues non latines, un domaine qui présente des défis spécifiques et reste moins développé que son équivalent pour les langues occidentales. L'ourdou, avec son système d'écriture dérivé du perso-arabe, présente plusieurs caractéristiques qui complexifient sa reconnaissance automatique :
+
+\begin{enumerate}
+\item \textbf{calligraphique :} Les caractères ourdou possèdent des formes curvilignes complexes avec des variations subtiles entre certaines lettres.
+\item \textbf{Connectivité contextuelle :} Dans l'écriture manuscrite ou imprimée, les caractères ourdou peuvent changer de forme selon leur position dans le mot (initiale, médiane, finale ou isolée).
+\item \textbf{Similarité entre caractères :} Certains caractères ne diffèrent que par des points diacritiques ou de légères modifications de courbes.
+\item \textbf{Direction d'écriture :} L'ourdou s'écrit de droite à gauche, ce qui peut nécessiter des adaptations spécifiques des algorithmes traditionnels.
+\end{enumerate}
+
+Ce projet revêt une importance particulière dans le contexte actuel de numérisation et de préservation des patrimoines culturels et linguistiques. Les systèmes de reconnaissance automatique pour l'ourdou peuvent contribuer à :
+\begin{itemize}
+\item La numérisation efficace d'archives et de documents historiques
+\item L'amélioration de l'accessibilité des contenus pour les personnes malvoyantes
+\item Le développement d'applications éducatives pour l'apprentissage de la langue
+\item L'intégration de la langue ourdou dans les technologies modernes (moteurs de recherche, traduction automatique, etc.)
+\end{itemize}
+
+Du point de vue technique, ce challenge représente également une opportunité d'explorer l'efficacité comparative des différentes architectures d'apprentissage profond (MLP, CNN, etc.) sur des tâches de reconnaissance visuelle complexes, contribuant ainsi à l'avancement des connaissances dans le domaine du traitement d'images par intelligence artificielle.
+\end{flushleft}
+
+\section{Rôle du projet dans mon parcours académique}
+
+\begin{flushleft}
+Ce projet s'inscrit dans une démarche d'approfondissement de mes compétences en apprentissage automatique et en vision par ordinateur, domaines fondamentaux de mon cursus en sciences des données. Il m'a permis d'appliquer concrètement les connaissances théoriques acquises pendant ma formation, tout en les enrichissant par une expérience pratique sur un cas réel.
+\bigskip
+La progression méthodique adoptée dans ce projet - en commençant par un modèle MLP simple, puis en évoluant vers des architectures CNN de plus en plus sophistiquées - reflète mon propre cheminement d'apprentissage. Cette approche m'a permis de comprendre en profondeur les avantages et limitations de chaque architecture, ainsi que l'impact des différentes techniques d'optimisation sur les performances des modèles.
+
+\bigskip
+Plus spécifiquement, ce projet m'a offert l'opportunité de :
+\bigskip
+
+\begin{itemize}
+\item Mettre en pratique les concepts théoriques de réseaux de neurones étudiés en cours
+\item Comprendre l'importance de l'exploration et du prétraitement des données dans un contexte de vision par ordinateur
+\item Maîtriser l'implémentation et l'optimisation de différentes architectures de deep learning
+\item Développer ma capacité à analyser critiquement les résultats et à identifier les pistes d'amélioration
+\item Me familiariser avec l'environnement des compétitions Kaggle, un écosystème important dans le domaine de la data science
+\end{itemize}
+\end{flushleft}
+
+\section{Contribution du projet aux objectifs pédagogiques et professionnels}
+
+\begin{flushleft}
+Sur le plan pédagogique, ce projet a contribué significativement à renforcer mon expertise dans plusieurs domaines clés de l'intelligence artificielle et de la data science :
+\bigskip
+\begin{enumerate}
+\item \textbf{Maîtrise des architectures de deep learning :}  La mise en œuvre successive de différentes architectures (MLP, CNN simple, CNN profond) m'a permis de comprendre comment adapter les modèles à la nature spécifique des données d'image.
+\item \textbf{Compréhension approfondie des techniques de régularisation :} L'utilisation de méthodes comme le Dropout et la BatchNormalization m'a offert une vision concrète de leur impact sur les performances et la stabilité des modèles.
+\item \textbf{Développement de compétences en analyse de résultats :} L'interprétation des matrices de confusion, des courbes d'apprentissage et des métriques de performance a renforcé ma capacité à évaluer objectivement les modèles développés.
+\item \textbf{Gestion d'un projet de bout en bout :} De l'exploration des données à la soumission finale, ce projet m'a permis de développer une vision globale du cycle de développement d'une solution d'intelligence artificielle.
+\end{enumerate}
+
+Sur le plan professionnel, ce projet enrichit mon portfolio avec une réalisation concrète et mesurable (score de 99,1\% sur la compétition), démontrant ma capacité à résoudre des problèmes complexes de vision par ordinateur. Les compétences développées sont directement transférables à de nombreux contextes industriels où la reconnaissance d'images et l'apprentissage profond sont appliqués, comme :
+\begin{itemize}
+\item Le développement de systèmes OCR pour diverses langues et alphabets
+\item La création de solutions d'analyse d'images médicales
+\item L'implémentation de systèmes de vision par ordinateur pour l'industrie 4.0
+\item La conception d'applications de reconnaissance visuelle pour les technologies mobiles.
+\bigskip
+Enfin, l'expérience acquise dans la manipulation d'architectures CNN avancées représente un atout précieux dans un marché du travail où les compétences en deep learning pour la vision par ordinateur sont particulièrement recherchées.
+\end{itemize}
+\end{flushleft}

@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manuscript.aux
+The style file: plainurl.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: references.bib
+Warning--entry type for "tensorflow2023cnn" isn't style-file defined
+--line 22 of file references.bib
+Warning--entry type for "github_reference" isn't style-file defined
+--line 29 of file references.bib
+You've used 6 entries,
+            2943 wiz_defined-function locations,
+            662 strings with 5826 characters,
+and the built_in function-call counts, 2051 in all, are:
+= -- 198
+> -- 60
+< -- 0
++ -- 22
+- -- 16
+* -- 56
+:= -- 305
+add.period$ -- 19
+call.type$ -- 6
+change.case$ -- 24
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 58
+empty$ -- 238
+format.name$ -- 16
+if$ -- 565
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 3
+newline$ -- 34
+num.names$ -- 12
+pop$ -- 82
+preamble$ -- 1
+purify$ -- 19
+quote$ -- 0
+skip$ -- 163
+stack$ -- 0
+substring$ -- 30
+swap$ -- 7
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 22
+warning$ -- 0
+while$ -- 12
+width$ -- 7
+write$ -- 64
+(There were 2 warnings)

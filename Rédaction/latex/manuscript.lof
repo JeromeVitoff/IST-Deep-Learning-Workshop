@@ -1,0 +1,31 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\contentsline {xchapter}{Présentation du projet de recherche Kaggle}{3}{chapter.1}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Présentation du contexte Data Science}{7}{chapter.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Aperçu des dimensions des datasets\relax }}{8}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Aperçu des données d'entrainement\relax }}{8}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Exemple de caractères ourdous\relax }}{9}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Exemple de caractères ourdous\relax }}{10}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces les statistiques des classes\relax }}{10}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Division du jeu d'entraînement en entraînement et validation\relax }}{12}{figure.caption.11}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Modélisation et Analyse des Résultats}{14}{chapter.3}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Architectude du CNN pronfonde\relax }}{19}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Apercu du fichier soumis\relax }}{25}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Exemple de caractères ourdous prédicte\relax }}{25}{figure.caption.15}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Perspectives}{26}{chapter.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Architecture du Perceptron.\relax }}{31}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Architecture CNN Simple.\relax }}{31}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Code Pré traitement des données.\relax }}{32}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Code de visualisation des résultats.\relax }}{32}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Courbe de précision et de perte.\relax }}{32}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Matrice de confusion.\relax }}{33}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Résumé Statistique du modèle MLP.\relax }}{33}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Courbe de précision et de perte.\relax }}{33}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Matrice de confusion.\relax }}{34}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Résumé Statistique du modèle CNN Simple.\relax }}{34}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Courbe de précision et de perte.\relax }}{34}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Matrice de confusion.\relax }}{35}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Résumé Statistique du modèle CNN Profonde.\relax }}{35}{figure.caption.30}%

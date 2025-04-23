@@ -1,0 +1,24 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Introduction aux approches utilisées}{\reset@font\mtcSfont 14}{section.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Modèle 1 : Perceptron Multicouche (MLP)}{\reset@font\mtcSfont 15}{section.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Architecture}{\reset@font\mtcSSfont 15}{subsection.3.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Entraînement}{\reset@font\mtcSSfont 15}{subsection.3.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.3}Résultats(54.6\%)}{\reset@font\mtcSSfont 15}{subsection.3.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.4}Analyse des limites}{\reset@font\mtcSSfont 16}{subsection.3.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Modèle 2 : CNN simple}{\reset@font\mtcSfont 16}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Architecture}{\reset@font\mtcSSfont 16}{subsection.3.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Entraînement}{\reset@font\mtcSSfont 17}{subsection.3.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Résultats(88\%)}{\reset@font\mtcSSfont 17}{subsection.3.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.4}Analyse des améliorations par rapport au MLP}{\reset@font\mtcSSfont 17}{subsection.3.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Modèle 3 : CNN profond avec BatchNormalization}{\reset@font\mtcSfont 18}{section.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}Architecture détaillée}{\reset@font\mtcSSfont 18}{subsection.3.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.2}Mécanismes de régularisation}{\reset@font\mtcSSfont 19}{subsection.3.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.3}Résultats (98.5\%)}{\reset@font\mtcSSfont 20}{subsection.3.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.4}Comparaison des performances}{\reset@font\mtcSSfont 20}{subsection.3.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Analyse comparative des trois approches}{\reset@font\mtcSfont 21}{section.3.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.5.1}Tableau comparatif des performances}{\reset@font\mtcSSfont 21}{subsection.3.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.5.2}Analyse des courbes d'apprentissage}{\reset@font\mtcSSfont 21}{subsection.3.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.5.3}Visualisation des matrices de confusion}{\reset@font\mtcSSfont 23}{subsection.3.5.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.5.4}Discussion sur les facteurs d'amélioration}{\reset@font\mtcSSfont 23}{subsection.3.5.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.6}Soumission sur Kaggle et résultats finaux}{\reset@font\mtcSfont 24}{section.3.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.6.1}Soumission sur Kaggle}{\reset@font\mtcSSfont 24}{subsection.3.6.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.6.2}Résultats finaux}{\reset@font\mtcSSfont 25}{subsection.3.6.2}}

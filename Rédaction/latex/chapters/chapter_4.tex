@@ -1,0 +1,81 @@
+% !TEX root = manuscript.tex
+
+\chapter{Perspectives}
+
+\section{Optimisations potentielles des modèles actuels}
+\begin{flushleft}
+Bien que notre CNN profond ait atteint d'excellentes performances, plusieurs voies d'optimisation pourraient être explorées pour améliorer encore les résultats ou réduire la complexité computationnelle :
+
+\bigskip
+\begin{itemize}
+\item Optimisation des hyperparamètres
+Une recherche systématique des hyperparamètres optimaux pourrait affiner davantage les performances.
+
+Une approche par recherche sur grille (Grid Search) ou optimisation bayésienne permettrait d'identifier les configurations optimales de façon plus rigoureuse que notre approche empirique actuelle.
+
+\item Augmentation de données
+L'implémentation de techniques d'augmentation de données pourrait renforcer la robustesse du modèle face aux variations.
+
+Ces transformations, appliquées dynamiquement pendant l'entraînement, augmenteraient artificiellement la taille du jeu de données et favoriseraient une meilleure généralisation. 
+
+\item Régularisation avancée
+D'autres techniques de régularisation pourraient être intégrées :
+\begin{itemize}
+\item Régularisation L1 ou L2 sur les poids des couches denses
+\item Utilisation de techniques comme Mixup ou CutMix
+\item Implémentation de la régularisation par bruitage des étiquettes (label smoothing) 
+\end{itemize}
+\end{itemize}
+\end{flushleft}
+
+\section{Exploration de modèles avancés}
+
+\begin{flushleft}
+\begin{enumerate}
+\item \textbf{Architectures ResNet}
+Les architectures à connexions résiduelles (ResNet) pourraient apporter des bénéfices significatifs :
+\begin{itemize}
+\item Connexions skip facilitant l'apprentissage de réseaux très profonds
+\item Meilleur flux de gradient à travers le réseau
+\item Capacité à capturer des caractéristiques à différentes échelles
+\end{itemize}
+\item \textbf{Attention et Transformers}
+Les mécanismes d'attention, au cœur des architectures Transformer, pourraient être particulièrement pertinents pour la reconnaissance de caractères ourdou.
+
+Une architecture Vision Transformer (ViT) adaptée pourrait être envisagée pour des développements futurs.
+
+\item \textbf{Approches d'ensemble}
+Combiner plusieurs modèles pour former un ensemble pourrait améliorer encore la précision.
+\end{enumerate}
+\end{flushleft}
+
+\section{Applications pratiques potentielles}
+
+\begin{flushleft}
+Les modèles développés dans ce projet pourraient servir de base à plusieurs applications concrètes :
+
+\begin{enumerate}
+\item \textbf{Systèmes OCR complets pour l'ourdou: }
+Notre classificateur de caractères isolés pourrait être intégré dans un système OCR complet pour l'ourdou comprenant :
+\begin{itemize}
+\item Détection et segmentation des lignes de texte
+\item Segmentation des caractères individuels
+\item Classification via notre modèle CNN
+\item Post-traitement linguistique pour la correction d'erreurs
+\end{itemize}
+\item \textbf{Applications éducatives}
+Des applications d'apprentissage de l'ourdou pourraient être développées :
+\begin{itemize}
+\item Reconnaissance en temps réel de caractères dessinés par l'apprenant
+\item Feedback immédiat sur la qualité de l'écriture
+\item Exercices interactifs adaptés au niveau de l'utilisateur
+\end{itemize}
+\item \textbf{Traitement de documents historiques}
+Notre approche pourrait être adaptée pour la numérisation et la préservation de documents historiques en ourdou :
+\begin{itemize}
+\item Adaptation à des styles calligraphiques anciens
+\item Traitement de documents dégradés ou de faible qualité
+\item Catalogage automatique de manuscrits
+\end{itemize}
+\end{enumerate}
+\end{flushleft}

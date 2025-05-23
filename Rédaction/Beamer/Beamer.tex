@@ -1,7 +1,7 @@
 \documentclass[aspectratio=169]{beamer}
 
 % Thème et configuration
-\usetheme{Madrid}
+\usetheme[secheader]{Madrid}
 \usecolortheme{default}
 
 % Packages
@@ -37,12 +37,12 @@
 
 % Informations du document
 \title{Reconnaissance de Caractères Ourdou avec Deep Learning}
-\subtitle{Approche Progressive du MLP aux CNN Profonds}
-\author{Adjimon VITOFFODJI}
+\subtitle{\textbf{Approche Progressive du MLP aux CNN Profonds}}
+\author{\textbf{Adjimon VITOFFODJI}}
 \institute[Paul Valéry]{
-    Master MIASHS, Université Paul Valéry, Montpellier III
+    Département MIASHS, UFR 6 Informatique, Mathématique et Statistique, Université de Montpellier Paul Valery
 }
-\date{Juin 2025}
+\date{\textbf{Juin 2025}}
 
 % Configuration de la navigation
 \setbeamertemplate{navigation symbols}{}
@@ -78,7 +78,7 @@
     \vspace*{0.1cm}
     \begin{center}
         \begin{tcolorbox}[colback=univ_blue, colframe=univ_blue, arc=4mm, boxrule=0pt, width=0.9\textwidth, enhanced]
-            {\color{white}\centering\Large \textbf{Reconnaissance de Caractères Ourdou avec Deep Learning}}
+            {\color{white}\centering\Large \textbf{Mémoire S2: Reconnaissance de Caractères Ourdou avec Deep Learning}}
         \end{tcolorbox}
 
         \vspace{0.1cm}
@@ -87,7 +87,7 @@
         \footnotesize\insertinstitute \\[0.2cm]
         \footnotesize\insertdate \\[0.3cm]
         \footnotesize Challenge Kaggle : IST Deep Learning Workshop \\[0.1cm]
-        \footnotesize Tuteur : M. Jérôme Pasquet
+        \footnotesize \textbf{Tuteur : M. Jérôme Pasquet}
     \end{center}
 \end{frame}
 
@@ -218,7 +218,7 @@
             \begin{itemize}
                 \item Input(784) → Dense(512)
                 \item Dense(256) → Output(40)
-                \item Dropout (0.2), ReLU, Softmax
+                \item Dropout (0.15), ReLU, Softmax
             \end{itemize}
             
             \vspace{0.3cm}

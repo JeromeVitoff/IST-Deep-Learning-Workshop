@@ -15,6 +15,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
+\usepackage[most]{tcolorbox}
 
 % Configuration des couleurs
 \definecolor{univ_blue}{RGB}{0,84,159}
@@ -23,15 +24,23 @@
 
 \setbeamercolor{structure}{fg=univ_blue}
 \setbeamercolor{frametitle}{bg=univ_blue,fg=white}
-\setbeamercolor{title}{fg=univ_blue}
+
+% Ne pas définir de couleur bleue pour ces éléments pour qu'ils restent en noir par défaut
+% \setbeamercolor{title}{fg=univ_blue}
+% \setbeamercolor{subtitle}{fg=univ_blue}
+% \setbeamercolor{author}{fg=univ_blue}
+% \setbeamercolor{institute}{fg=univ_blue}
+% \setbeamercolor{date}{fg=univ_blue}
+
+% Redéfinir la couleur des sections dans la table des matières
+\setbeamercolor{section in toc}{fg=black}
 
 % Informations du document
-\title[Reconnaissance Caractères Ourdou]{Reconnaissance de Caractères Ourdou avec Deep Learning}
+\title{Reconnaissance de Caractères Ourdou avec Deep Learning}
 \subtitle{Approche Progressive du MLP aux CNN Profonds}
-\author[A. VITOFFODJI]{Adjimon VITOFFODJI}
+\author{Adjimon VITOFFODJI}
 \institute[Paul Valéry]{
-    Master MIASHS \\
-    Université Paul Valéry, Montpellier III
+    Master MIASHS, Université Paul Valéry, Montpellier III
 }
 \date{Juin 2025}
 
@@ -46,13 +55,39 @@
 \begin{document}
 
 % Page de titre
-\begin{frame}
-    \titlepage
-    \vspace{-0.5cm}
+\begin{frame}[plain]
+    % Bandeau bleu en haut
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[univ_blue] (current page.north west) rectangle (current page.north east |- 0,1cm);
+    \end{tikzpicture}
+
+    % Logos
+    \begin{minipage}[t]{0.45\textwidth}
+        \flushleft
+        \vspace{0.2cm}
+        \includegraphics[width=0.2\textwidth]{logo_upvm.png}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \flushright
+        \vspace{0.2cm}
+        \includegraphics[width=0.2\textwidth]{logo_miashs.png}
+    \end{minipage}
+
+    % Titre encadré avec coins arrondis
+    \vspace*{0.1cm}
     \begin{center}
-        \small Challenge Kaggle : IST Deep Learning Workshop \\
-        \vspace{0.3cm}
-        \tiny Tuteur : M. Jérôme Pasquet
+        \begin{tcolorbox}[colback=univ_blue, colframe=univ_blue, arc=4mm, boxrule=0pt, width=0.9\textwidth, enhanced]
+            {\color{white}\centering\Large \textbf{Reconnaissance de Caractères Ourdou avec Deep Learning}}
+        \end{tcolorbox}
+
+        \vspace{0.1cm}
+        \normalsize\insertsubtitle \\[0.5cm]
+        \normalsize\insertauthor \\[0.2cm]
+        \footnotesize\insertinstitute \\[0.2cm]
+        \footnotesize\insertdate \\[0.3cm]
+        \footnotesize Challenge Kaggle : IST Deep Learning Workshop \\[0.1cm]
+        \footnotesize Tuteur : M. Jérôme Pasquet
     \end{center}
 \end{frame}
 
@@ -61,27 +96,30 @@
     \tableofcontents
 \end{frame}
 
-\section{Contexte et Objectifs}
 
+\section{Contexte et Objectifs}
 \begin{frame}{Contexte du Projet}
+\begin{itemize}
+\item Mémoire S2 : \textbf{Challenge Kaggle :} IST Deep Learning Workshop
+\item Préservation patrimoine numérique (linguistique)
+\item Avancement de l’OCR pour les écritures non latines.
+\item Objectifs académiques : Approfondir les compétences en IA, traitement d’images et apprentissage profond.
+\item Objectifs professionnels : Développer une expertise en vision par ordinateur et OCR, applicable à la numérisation de documents ou aux outils éducatifs.
+\end{itemize}
+\end{frame}
+\begin{frame}{Objectifs du Projet}
     \begin{columns}[T]
         \begin{column}{0.6\textwidth}
-            \textbf{Challenge Kaggle :} IST Deep Learning Workshop
-            
-            \vspace{0.5cm}
             \textbf{Objectif Principal :}
             \begin{itemize}
-                \item Classifier \emphasize{40 caractères ourdou} distincts
-                \item Images 28×28 pixels en niveaux de gris
-                \item Optimiser la précision de classification
+                \item Classifier \emphasize{40 caractères ourdou} distincts, tout en optimisant la précision de classification
             \end{itemize}
             
             \vspace{0.5cm}
-            \textbf{Motivation :}
+            \textbf{Objectif Spécifiques :}
             \begin{itemize}
-                \item Préservation du patrimoine linguistique
-                \item \emphasize{170+ millions} de locuteurs ourdou
-                \item Défis spécifiques aux langues non-latines
+                \item Développer un modèle d’apprentissage automatique pour classer 40 classes de caractères ourdou à partir d’images 28x28 pixels
+                \item Défis : Calligraphie complexe, similarités entre caractères, variabilité des styles d’écriture.      
             \end{itemize}
         \end{column}
         \begin{column}{0.4\textwidth}
@@ -104,7 +142,7 @@
             \begin{itemize}
                 \item \textbf{Entraînement :} 28,328 images
                 \item \textbf{Test :} 4,880 images
-                \item \textbf{Classes :} 40 caractères distincts
+                \item \textbf{Classes label:} 40 caractères distincts
                 \item \textbf{Format :} 28×28 pixels (784 features)
             \end{itemize}
             
@@ -166,40 +204,9 @@
 \section{Méthodologie Progressive}
 
 \begin{frame}{Approche Méthodologique}
-    \begin{center}
-        \begin{tikzpicture}[node distance=3cm, auto]
-            % Nodes
-            \node[draw, rectangle, fill=univ_blue!20, text width=2.5cm, text centered] (mlp) {
-                \textbf{MLP Simple} \\
-                \small Baseline \\
-                \small 543k paramètres
-            };
-            \node[draw, rectangle, fill=tech_green!20, text width=2.5cm, text centered, right of=mlp] (cnn) {
-                \textbf{CNN Simple} \\
-                \small Spatial \\
-                \small 200k paramètres
-            };
-            \node[draw, rectangle, fill=accent_orange!20, text width=2.5cm, text centered, right of=cnn] (deep) {
-                \textbf{CNN Profond} \\
-                \small Avancé \\
-                \small 447k paramètres
-            };
-            
-            % Arrows
-            \draw[->, thick] (mlp) -- (cnn) node[midway, above] {\small +Convolution};
-            \draw[->, thick] (cnn) -- (deep) node[midway, above] {\small +Profondeur};
-            
-            % Results
-            \node[below of=mlp, node distance=1.5cm] {\accuracy{54.6\%}};
-            \node[below of=cnn, node distance=1.5cm] {\accuracy{88.4\%}};
-            \node[below of=deep, node distance=1.5cm] {\accuracy{98.5\%}};
-        \end{tikzpicture}
-    \end{center}
-    
-    \vspace{0.5cm}
-    \begin{center}
-        \textbf{Progression logique :} Complexité croissante adaptée aux données image
-    \end{center}
+    \centering
+     \includegraphics[width=\textwidth]{figures/Methodologie.png}
+     
 \end{frame}
 
 \section{Résultats et Comparaisons}
@@ -237,11 +244,11 @@
                 \caption{Courbes d'apprentissage MLP}
             \end{figure}
             
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.8\textwidth]{figures/mlp_confusion_matrix.png}
-                \caption{Matrice de confusion MLP}
-            \end{figure}
+            %\begin{figure}
+                %\centering
+                %\includegraphics[width=0.8\textwidth]{figures/mlp_confusion_matrix.png}
+                %\caption{Matrice de confusion MLP}
+            %\end{figure}
         \end{column}
     \end{columns}
 \end{frame}
@@ -279,11 +286,11 @@
                 \caption{Courbes d'apprentissage CNN}
             \end{figure}
             
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.8\textwidth]{figures/cnn_confusion_matrix.png}
-                \caption{Matrice de confusion CNN}
-            \end{figure}
+            %\begin{figure}
+                %\centering
+                %\includegraphics[width=0.8\textwidth]{figures/cnn_confusion_matrix.png}
+                %\caption{Matrice de confusion CNN}
+            %\end{figure}
         \end{column}
     \end{columns}
 \end{frame}
@@ -323,7 +330,7 @@
             \textbf{Performance Exceptionnelle :}
             \begin{itemize}
                 \item \accuracy{Validation : 98.5\%}
-                \item \accuracy{Test Kaggle : 99.1\%}
+                %\item \accuracy{Test Kaggle : 99.1\%}
                 \item Loss finale : 0.06
             \end{itemize}
             
@@ -349,11 +356,11 @@
                 \caption{Courbes d'apprentissage CNN profond}
             \end{figure}
             
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.8\textwidth]{figures/deep_cnn_confusion_matrix.png}
-                \caption{Matrice de confusion optimale}
-            \end{figure}
+            %\begin{figure}
+                %\centering
+                %\includegraphics[width=0.8\textwidth]{figures/deep_cnn_confusion_matrix.png}
+                %\caption{Matrice de confusion optimale}
+            %\end{figure}
         \end{column}
     \end{columns}
 \end{frame}
@@ -423,17 +430,9 @@
             \begin{itemize}
                 \item Score public : \accuracy{99.1\%}
                 \item Cohérence avec validation locale (98.5\%)
-                \item Excellente généralisation
             \end{itemize}
             
-            \vspace{0.5cm}
-            \textbf{Positionnement :}
-            \begin{itemize}
-                \item Parmi les meilleures performances
-                \item Validation objective de l'approche
-                \item Robustesse sur données inconnues
-            \end{itemize}
-            
+        
             \vspace{0.5cm}
             \textbf{Validation de l'approche :}
             \begin{itemize}
@@ -445,12 +444,6 @@
         \begin{column}{0.4\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=\textwidth]{figures/submission_preview.png}
-                \caption{Aperçu soumission}
-            \end{figure}
-            
-            \begin{figure}
-                \centering
                 \includegraphics[width=\textwidth]{figures/prediction_examples.png}
                 \caption{Exemples prédictions}
             \end{figure}
@@ -458,43 +451,7 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{Perspectives et Améliorations}
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-            \textbf{Optimisations Possibles :}
-            \begin{itemize}
-                \item Recherche hyperparamètres systématique
-                \item Augmentation de données (rotations, déformations)
-                \item Régularisation avancée (Label smoothing, Mixup)
-            \end{itemize}
-            
-            \vspace{0.3cm}
-            \textbf{Architectures Avancées :}
-            \begin{itemize}
-                \item \textbf{ResNet :} Connexions résiduelles
-                \item \textbf{Vision Transformers :} Mécanismes d'attention
-                \item \textbf{Ensemble :} Combinaison de modèles
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \textbf{Applications Étendues :}
-            \begin{itemize}
-                \item OCR complet ourdou (segmentation + classification)
-                \item Applications éducatives interactives
-                \item Numérisation documents historiques
-                \item Systèmes d'assistance multilingues
-            \end{itemize}
-            
-            \vspace{0.3cm}
-            \textbf{Impact Potentiel :}
-            \begin{itemize}
-                \item Préservation patrimoine numérique
-                \item Accessibilité technologique
-                \item Recherche en langues non-latines
-            \end{itemize}
-        \end{column}
-    \end{columns}
-\end{frame}
+
 
 \section{Conclusion}
 
@@ -517,25 +474,12 @@
     \vspace{0.5cm}
     \textbf{Impact :} Démonstration concrète du potentiel des CNN pour la préservation des langues non-latines
     
-    \vspace{0.5cm}
-    \begin{center}
-        \Large \textcolor{tech_green}{\textbf{Merci pour votre attention !}}
-    \end{center}
+    
 \end{frame}
 
-\begin{frame}{Questions et Discussion}
+\begin{frame}{Conclusion}
     \begin{center}
-        \Huge Questions ?
-        
-        \vspace{1cm}
-        
-        \Large
-        \begin{itemize}
-            \item Choix architecturaux
-            \item Défis techniques rencontrés
-            \item Applications futures
-            \item Évolutions du projet
-        \end{itemize}
+        \Large \textcolor{tech_green}{\textbf{Merci pour votre attention !}}
     \end{center}
 \end{frame}
 

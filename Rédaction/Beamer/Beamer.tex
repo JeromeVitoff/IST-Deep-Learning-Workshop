@@ -101,7 +101,7 @@
 \begin{frame}{Contexte du Projet}
 \begin{itemize}
 \item Mémoire S2 : \textbf{Challenge Kaggle :} IST Deep Learning Workshop
-\item Préservation patrimoine numérique (linguistique)
+\item Préservation du patrimoine numérique (linguistique)
 \item Avancement de l’OCR pour les écritures non latines.
 \item Objectifs académiques : Approfondir les compétences en IA, traitement d’images et apprentissage profond.
 \item Objectifs professionnels : Développer une expertise en vision par ordinateur et OCR, applicable à la numérisation de documents ou aux outils éducatifs.
@@ -175,7 +175,7 @@
                 \item Structures calligraphiques élaborées
             \end{itemize}
             
-            \vspace{0.3cm}
+            \vspace{0.2cm}
             \textbf{Similarité entre Caractères :}
             \begin{itemize}
                 \item Différences subtiles (points diacritiques)
@@ -183,11 +183,11 @@
                 \item Confusions potentielles fréquentes
             \end{itemize}
             
-            \vspace{0.3cm}
+            \vspace{0.2cm}
             \textbf{Contraintes Techniques :}
             \begin{itemize}
                 \item Résolution limitée (28×28)
-                \item Variabilité stylistique
+                %\item Variabilité stylistique
                 \item Qualité d'image variable
             \end{itemize}
         \end{column}
@@ -195,7 +195,7 @@
             \begin{figure}
                 \centering
                 \includegraphics[width=\textwidth]{figures/similar_characters.png}
-                \caption{Exemples de caractères similaires}
+                %\caption{Exemples de caractères similaires}
             \end{figure}
         \end{column}
     \end{columns}
@@ -234,7 +234,7 @@
             \begin{itemize}
                 \item Perte information spatiale
                 \item Sensibilité à la position
-                \item Confusion entre caractères similaires
+                %\item Confusion entre caractères similaires
             \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
@@ -264,19 +264,19 @@
             \end{itemize}
             
             \vspace{0.3cm}
-            \textbf{Améliorations :}
-            \begin{itemize}
-                \item Préservation structure spatiale
-                \item Détection motifs locaux
-                \item Invariance partielle aux translations
-            \end{itemize}
-            
-            \vspace{0.3cm}
             \textbf{Résultats :}
             \begin{itemize}
                 \item \accuracy{Précision : 88.4\% (+33.8 points)}
                 \item Progression stable (10-12 époques)
                 \item Matrice de confusion focalisée
+            \end{itemize}
+            
+            \vspace{0.3cm}
+            \textbf{Améliorations :}
+            \begin{itemize}
+                \item Préservation structure spatiale
+                \item Détection motifs locaux
+                %\item Invariance partielle aux translations
             \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
@@ -302,7 +302,7 @@
             \begin{itemize}
                 \item 3 blocs convolutionnels (32→64→128)
                 \item BatchNormalization après chaque couche
-                \item Dropout stratifié (0.25/0.5)
+                \item Dropout progressif (0.25/0.5)
                 \item Padding 'same'
             \end{itemize}
             
@@ -310,7 +310,7 @@
             \textbf{Techniques de Régularisation :}
             \begin{itemize}
                 \item \textbf{BatchNormalization :} Stabilisation
-                \item \textbf{Dropout adaptatif :} Anti-surapprentissage
+                \item \textbf{Dropout progressif :} Anti-surapprentissage
                 \item \textbf{ReduceLROnPlateau :} Optimisation fine
             \end{itemize}
         \end{column}
@@ -365,38 +365,7 @@
     \end{columns}
 \end{frame}
 
-\section{Analyse et Perspectives}
-
-\begin{frame}{Analyse Comparative}
-    \begin{table}[h]
-        \centering
-        \begin{tabular}{@{}lcccc@{}}
-            \toprule
-            \textbf{Modèle} & \textbf{Précision} & \textbf{Paramètres} & \textbf{Temps} & \textbf{Époques} \\
-            \midrule
-            MLP Simple & \color{red}54.6\% & 537k & 4 min & 1 \\
-            CNN Simple & \color{orange}88.4\% & 200k & 6 min & 11 \\
-            CNN Profond & \color{tech_green}\textbf{98.5\%} & 447k & 15 min & 30 \\
-            \bottomrule
-        \end{tabular}
-        \caption{Comparaison des performances}
-    \end{table}
-    
-    \vspace{0.5cm}
-    \begin{center}
-        \emphasize{Gain total : +43.9 points de précision}
-    \end{center}
-    
-    \vspace{0.3cm}
-    \textbf{Facteurs clés d'amélioration :}
-    \begin{itemize}
-        \item Information spatiale préservée
-        \item Hiérarchie de caractéristiques
-        \item Régularisation avancée
-        \item Optimisation adaptative
-    \end{itemize}
-\end{frame}
-
+\section{Analyse et Validation}
 \begin{frame}{Évolution des Matrices de Confusion}
     \begin{figure}
         \centering
@@ -417,11 +386,43 @@
         \end{minipage}
     \end{figure}
     
-    \vspace{0.3cm}
+    \vspace{0.1cm}
     \begin{center}
         \textbf{Progression visible :} De la confusion dispersée à la diagonale dominante
     \end{center}
 \end{frame}
+
+\begin{frame}{Analyse Comparative}
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{@{}lcccc@{}}
+            \toprule
+            \textbf{Modèle} & \textbf{Précision} & \textbf{Paramètres} & \textbf{Temps} & \textbf{Époques} \\
+            \midrule
+            MLP Simple & \color{red}54.6\% & 537k & 4 min & 1 \\
+            CNN Simple & \color{orange}88.4\% & 200k & 6 min & 11 \\
+            CNN Profond & \color{tech_green}\textbf{98.5\%} & 447k & 15 min & 30 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Comparaison des performances}
+    \end{table}
+    
+    \vspace{0.3cm}
+    \begin{center}
+        \emphasize{Gain total : +43.9 points de précision}
+    \end{center}
+    
+    \vspace{0.1cm}
+    \textbf{Facteurs clés d'amélioration :}
+    \begin{itemize}
+        \item Information spatiale préservée
+        \item Hiérarchie de caractéristiques
+        \item Régularisation avancée
+        \item Optimisation adaptative
+    \end{itemize}
+\end{frame}
+
+
 
 \begin{frame}{Validation Kaggle}
     \begin{columns}[T]
@@ -458,7 +459,7 @@
 \begin{frame}{Conclusion}
     \textbf{Résultats Majeurs :}
     \begin{itemize}
-        \item \emphasize{Progression spectaculaire :} 54.6\% → 99.1\%
+        \item \emphasize{Progression spectaculaire :} 54.6\% → 98.5\%
         \item \emphasize{Validation méthodologique :} Importance architecture adaptée
         \item \emphasize{Performance exceptionnelle :} Niveau quasi-humain
     \end{itemize}
